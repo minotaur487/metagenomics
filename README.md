@@ -1,19 +1,19 @@
 # Metagenomics
 This application takes a file containing reads and maps them to the genomes provided. The complexity/difficulty lies in that the reads can originate from any of the 1000 genomes provided. As a result, one must implement read mapping capabilities for one genome and then apply that solution across all of the genomes efficiently.
 
-## Input Files
+## Input
 - reads.fasta - file containing 20,000 reads, each with a unique ID
 - genome\_{ID}.fasta - 1,000 reference genomes
 
-## Output Files
+## Output
 - predictions.csv - resulting file that maps each read to the genome it originated from. The format is '>read\_{READ_ID} Genome_Number{GENOME_ID}'. Note, the desired output is to map each read to a genome so all reads must be mapped to a genome (predictions.csv should be 20,000 reads).
 
 ## Usage
-After setting the desired constants for the specified use case and data, this can be run with `python3 main.py`. Sample reads and sample genomesare provided in the data directory.
+After setting the desired constants for the specified use case and data, this can be run with `python3 main.py`. Sample reads and sample genomes are provided in the data directory.
 
 ## Results
 - Successfully identifies present genomes based on custom threshold.
-- Performs metagenomics analysis to map each read to a genome, account for SNPs in the form of substitutions.
+- Performs metagenomics analysis to map each read to a genome, account for SNPs in the form of substitutions and indels.
 - Successfully mapped 90% of reads to the correct genome in case of 20,000 reads with 1,000 possible genomes each of length 10,000 in under a minute.
 
 ### Todo / Future Improvements
